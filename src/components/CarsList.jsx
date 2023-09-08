@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCars, selectCars } from '../store/slices/carsSlice';
 import { getImage } from '../functions/getImage';
+import { useNavigate } from 'react-router-dom';
 
 function CarsList() {
     const dispatch = useDispatch();
     const cars = useSelector(selectCars);
-    const [carImages, setCarImages] = useState({});
+    const [ carImages, setCarImages ] = useState({});
+    const navigate = useNavigate()
 
     useEffect(() => {
         dispatch(fetchCars());
@@ -25,7 +27,7 @@ function CarsList() {
         if (cars.length > 0) {
             fetchCarImages();
         }
-    }, [cars]); // Run this effect whenever cars change
+    }, [cars]);
 
     if (cars.status === 'loading') {
         return <div>...Loading</div>;
@@ -36,7 +38,7 @@ function CarsList() {
     }
 
     return (
-        <div>
+        <div >
             <h1>Список электромашин:</h1>
             {cars?.map((item) => (
                 <div key={item.id}>
@@ -44,7 +46,7 @@ function CarsList() {
                     <h3>{item.pathName}</h3>
                     <div>{item.buyPrice.value} сом</div>
                     { carImages ? (
-                      <img src={carImages[item.id]}/>
+                      <img onClick={() => navigate(`/details/${item.id}`)} src={carImages[item.id]}/>
                     ) : (
                       <div>Нету фотографии</div>
                     ) }

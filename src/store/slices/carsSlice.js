@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { BASE_URL } from "../../utils/consts";
+import { BASE_URL, DETAILS_URL } from "../../utils/consts";
 
 export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
     try {
@@ -14,23 +14,25 @@ export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
     }
 })
 
-export const fetchOneImage = createAsyncThunk('oneImage/fetchCarImage', async (id) => {
+export const getOneCar = createAsyncThunk('cars/fetchCars', async (id) => {
     try {
-        const response = await fetch(`https://online.moysklad.ru/api/remap/1.2/entity/product/${id}/images`);
+        const response = await fetch(`${DETAILS_URL}/${id}`)
         if(!response.ok) {
-            throw new Error('Ошибка при получении картинок электромобиля проверьте id которое вы передаете.')
+            throw new Error('Ошибка при получении данных c сервера')
         }
-        const data = await response.json();
+        const data = await response.json()
         return data
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 })
+
 
 const initialState = {
     cars: [],
     status: "idle",
     error: null,
+    oneCar: null
 }
 
 const carsSlice = createSlice({
@@ -48,10 +50,11 @@ const carsSlice = createSlice({
         builder.addCase(fetchCars.rejected, (state, action) => {
             state.status = 'error';
             state.error = action.error.message
-        })
+        });
     }
 })
 
 export default carsSlice.reducer
 
-export const selectCars = (state) => state.cars.cars
+export const selectCars = (state) => state.cars.cars; 
+
