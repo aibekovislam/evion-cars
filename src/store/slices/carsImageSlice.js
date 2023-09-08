@@ -1,18 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { BASE_URL } from "../../utils/consts";
-
-export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
-    try {
-        const response = await fetch(BASE_URL);
-        if(!response.ok) {
-            throw new Error('Ошибка при получении данных c сервера')
-        }
-        const data = await response.json()
-        return data
-    } catch (error) {
-        console.log(error)
-    }
-})
 
 export const fetchOneImage = createAsyncThunk('oneImage/fetchCarImage', async (id) => {
     try {
@@ -21,6 +7,7 @@ export const fetchOneImage = createAsyncThunk('oneImage/fetchCarImage', async (i
             throw new Error('Ошибка при получении картинок электромобиля проверьте id которое вы передаете.')
         }
         const data = await response.json();
+        console.log(data)
         return data
     } catch (error) {
         console.log(error)
@@ -28,30 +15,30 @@ export const fetchOneImage = createAsyncThunk('oneImage/fetchCarImage', async (i
 })
 
 const initialState = {
-    cars: [],
+    carImage: [],
     status: "idle",
     error: null,
 }
 
-const carsSlice = createSlice({
-    name: "cars",
+const carImage = createSlice({
+    name: "carImage",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchCars.pending, (state) => {
+        builder.addCase(fetchOneImage.pending, (state) => {
             state.status = 'loading';
         });
-        builder.addCase(fetchCars.fulfilled, (state, action) => {
+        builder.addCase(fetchOneImage.fulfilled, (state, action) => {
             state.status = 'succeeded';
-            state.cars = action.payload
+            state.carImage = action.payload
         });
-        builder.addCase(fetchCars.rejected, (state, action) => {
+        builder.addCase(fetchOneImage.rejected, (state, action) => {
             state.status = 'error';
             state.error = action.error.message
         })
     }
 })
 
-export default carsSlice.reducer
+export default carImage.reducer
 
-export const selectCars = (state) => state.cars.cars
+export const selectCarImage = (state) => state.carImage.carImage
