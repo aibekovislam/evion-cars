@@ -23,7 +23,7 @@ function Detail() {
     return (
         <div>
             <h2>{data.name}</h2>
-            <img src={id.images} />
+            
         </div>
     )
 }
