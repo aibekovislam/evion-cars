@@ -8,10 +8,12 @@ import Detail from '../pages/Detail';
 function CarsList() {
     const dispatch = useDispatch();
     const cars = useSelector(selectCars);
-    const [ carImages, setCarImages ] = useState({});
-    const navigate = useNavigate()
+    const [carImages, setCarImages] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
+        setIsLoading(true);
         dispatch(fetchCars());
     }, []);
 
@@ -23,21 +25,15 @@ function CarsList() {
                 imageUrls[car.id] = imageUrl;
             }
             setCarImages(imageUrls);
+            setIsLoading(false);
         };
 
         if (cars.length > 0) {
             fetchCarImages();
         }
     }, [cars]);
-
-    if (cars.status === 'loading') {
-        return <div>...Loading</div>;
-    }
-
-    if (cars.status === 'error') {
-        return <div>Error {cars.error}</div>;
-    }
-
+    
+        
     return (
         <div >
             <h1>Список электромашин:</h1>
@@ -59,3 +55,4 @@ function CarsList() {
 }
 
 export default CarsList;
+
