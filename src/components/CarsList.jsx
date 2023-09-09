@@ -31,8 +31,7 @@ function CarsList() {
         if (cars.length > 0) {
             fetchCarImages();
         }
-    }, [cars]);
-    
+    }, [cars]);  
         
     return (
         <div >
