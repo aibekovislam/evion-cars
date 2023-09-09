@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCars, selectCars } from '../store/slices/carsSlice';
 import { getImage } from '../functions/getImage';
 import { useNavigate } from 'react-router-dom';
+import Detail from '../pages/Detail';
 
 function CarsList() {
     const dispatch = useDispatch();
@@ -46,7 +47,7 @@ function CarsList() {
                     <h3>{item.pathName}</h3>
                     <div>{item.buyPrice.value} сом</div>
                     { carImages ? (
-                      <img onClick={() => navigate(`/details/${item.id}`)} src={carImages[item.id]}/>
+                        <img onClick={() => navigate(`/details/${item.id}`)} src={carImages[item.id]}/>
                     ) : (
                       <div>Нету фотографии</div>
                     ) }
