@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getDetail } from '../functions/getDetail';
 import { getImage } from '../functions/getImage';
+import { Ring } from '@uiball/loaders'
 
 function Detail() {
     const { id } = useParams();
@@ -32,8 +33,13 @@ function Detail() {
         }
     }, [id]);
 
-    if (!data) {
-        return <div>Loading...</div>;
+    if (!data) { 
+        return <Ring 
+         size={40}
+         lineWeight={5}
+         speed={2} 
+         color="black" 
+        />
     }
 
     return (

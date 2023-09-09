@@ -4,6 +4,8 @@ import { fetchCars, selectCars } from '../store/slices/carsSlice';
 import { getImage } from '../functions/getImage';
 import { useNavigate } from 'react-router-dom';
 import Detail from '../pages/Detail';
+import { Ring } from '@uiball/loaders'
+
 
 function CarsList() {
     const dispatch = useDispatch();
@@ -41,11 +43,22 @@ function CarsList() {
                     <h2>{item.name}</h2>
                     <h3>{item.pathName}</h3>
                     <div>{item.buyPrice.value} сом</div>
-                    { carImages ? (
+                   
+                        {isLoading ? (
+
+<Ring 
+ size={40}
+ lineWeight={5}
+ speed={2} 
+ color="black" 
+/>
+                        ) : (
+
                         <img onClick={() => navigate(`/details/${item.id}`)} src={carImages[item.id]}/>
-                    ) : (
-                      <div>Нету фотографии</div>
-                    ) }
+                        )}
+                    
+                    
+                    
                     <hr></hr>
                 </div>
             ))}
