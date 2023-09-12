@@ -33,7 +33,7 @@ function BuyElectroCar() {
 
   async function getTokenFromServer() {
     try {
-      const response = await axios.post('http://localhost:3000/get-access-token');
+      const response = await axios.post('https://evion-cars-api-a533851fe462.herokuapp.com/get-access-token');
       console.log('Ответ от сервера:', response.data);
       localStorage.setItem("token", JSON.stringify(response.data))
     } catch (error) {
@@ -49,6 +49,10 @@ function BuyElectroCar() {
       'Content-Type': 'application/json',
     },
   };
+
+  useEffect(() => {
+    getTokenFromServer()
+  }, [])
 
   function order() {
     setIsSubmitting(true); // Устанавливаем состояние отправки формы
