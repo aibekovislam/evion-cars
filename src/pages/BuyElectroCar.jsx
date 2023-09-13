@@ -28,15 +28,15 @@ function BuyElectroCar() {
       });
   };  
 
-  // async function getTokenFromServer() {
-  //   try {
-  //     const response = await axios.post('https://evion-cars-api-a533851fe462.herokuapp.com/get-access-token');
-  //     console.log('Ответ от сервера:', response.data);
-  //     localStorage.setItem("token", JSON.stringify(response.data))
-  //   } catch (error) {
-  //     console.error('Ошибка при получении токена:', error);
-  //   }
-  // }  
+  async function getTokenFromServer() {
+    try {
+      const response = await axios.post('https://evion-cars-api-a533851fe462.herokuapp.com/get-access-token');
+      console.log('Ответ от сервера:', response.data);
+      localStorage.setItem("token", JSON.stringify(response.data))
+    } catch (error) {
+      console.error('Ошибка при получении токена:', error);
+    }
+  }  
 
   const token = JSON.parse(localStorage.getItem("token"));
 
@@ -47,9 +47,9 @@ function BuyElectroCar() {
     },
   };
 
-  // useEffect(() => {
-  //   getTokenFromServer()
-  // }, [])
+  useEffect(() => {
+    getTokenFromServer()
+  }, [])
 
   function order() {
     setIsSubmitting(true); 
