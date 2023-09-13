@@ -1,13 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 
 function BuyElectroCar() {
-  const { id } = useParams();
   const [leadName, setLeadName] = useState('');
   const [validationErrors, setValidationErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false); // Добавляем состояние для отслеживания отправки формы
+  const [isSubmitting, setIsSubmitting] = useState(false); 
 
   const validationSchema = Yup.object().shape({
     leadName: Yup.string()
@@ -19,7 +17,6 @@ function BuyElectroCar() {
     const { name, value } = e.target;
     setLeadName(value);
     
-    // Выполняем валидацию
     Yup
       .reach(validationSchema, name)
       .validate(value)
@@ -31,15 +28,15 @@ function BuyElectroCar() {
       });
   };  
 
-  async function getTokenFromServer() {
-    try {
-      const response = await axios.post('https://evion-cars-api-a533851fe462.herokuapp.com/get-access-token');
-      console.log('Ответ от сервера:', response.data);
-      localStorage.setItem("token", JSON.stringify(response.data))
-    } catch (error) {
-      console.error('Ошибка при получении токена:', error);
-    }
-  }  
+  // async function getTokenFromServer() {
+  //   try {
+  //     const response = await axios.post('https://evion-cars-api-a533851fe462.herokuapp.com/get-access-token');
+  //     console.log('Ответ от сервера:', response.data);
+  //     localStorage.setItem("token", JSON.stringify(response.data))
+  //   } catch (error) {
+  //     console.error('Ошибка при получении токена:', error);
+  //   }
+  // }  
 
   const token = JSON.parse(localStorage.getItem("token"));
 
@@ -50,15 +47,15 @@ function BuyElectroCar() {
     },
   };
 
-  useEffect(() => {
-    getTokenFromServer()
-  }, [])
+  // useEffect(() => {
+  //   getTokenFromServer()
+  // }, [])
 
   function order() {
-    setIsSubmitting(true); // Устанавливаем состояние отправки формы
+    setIsSubmitting(true); 
   
     validationSchema
-      .validate({ leadName }) // Проводим валидацию
+      .validate({ leadName })
       .then(() => {
         const leadData = [
           {
@@ -83,24 +80,20 @@ function BuyElectroCar() {
           .then((response) => {
             if (response.status === 200) {
               console.log('Сделка успешно добавлена:', response.data);
-              // Выполните необходимые действия после успешной отправки
             } else {
               console.error('Ошибка при добавлении сделки:', response.status, response.data);
-              // Обработка ошибки, если запрос не удался
             }
           })
           .catch((error) => {
             console.error('Ошибка при отправке запроса:', error);
-            // Обработка ошибки, если запрос не удался
           })
           .finally(() => {
-            setIsSubmitting(false); // Сбрасываем состояние отправки формы
+            setIsSubmitting(false); 
           });
       })
       .catch((error) => {
-        // Ошибка валидации
         setValidationErrors({ ...validationErrors, leadName: error.message });
-        setIsSubmitting(false); // Сбрасываем состояние отправки формы
+        setIsSubmitting(false);
       });
   }  
 
