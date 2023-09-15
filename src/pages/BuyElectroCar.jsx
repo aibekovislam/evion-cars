@@ -47,9 +47,9 @@ function BuyElectroCar() {
     },
   };
 
-  useEffect(() => {
-    getTokenFromServer()
-  }, [])
+  // useEffect(() => {
+  //   getTokenFromServer()
+  // }, [])
 
   function order() {
     setIsSubmitting(true); 
