@@ -5,6 +5,7 @@ import { getImage } from '../functions/getImage';
 import { useNavigate } from 'react-router-dom';
 import Detail from '../pages/Detail';
 import { Ring } from '@uiball/loaders'
+import "../css/car.css"
 
 
 function CarsList() {
@@ -62,6 +63,9 @@ function CarsList() {
                     <hr></hr>
                 </div>
             ))}
+
+           <a className='button' href="https://forms.amocrm.ru/rvldddc"> Оставить</a>
+
         </div>
     );
 }
