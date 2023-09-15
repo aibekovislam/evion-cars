@@ -1,55 +1,120 @@
-
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import * as Yup from 'yup';
 
 function BuyElectroCar() {
-    const { id } = useParams();
-    // function order() {
-    //     axios.post('https://evion.amocrm.ru/api/v4/leads', {
-    //     data: [
-    //         {
-    //         name: "Сделка для примера 1",
-    //         created_by: 0,
-    //         price: 20000,
-    //         custom_fields_values: [
-    //             {
-    //             field_id: 294471,
-    //             values: [
-    //                 {
-    //                 value: "Наш первый клиент"
-    //                 }
-    //             ]
-    //             }
-    //         ]
-    //         },
-    //         {
-    //         name: "Сделка для примера 2",
-    //         price: 10000,
-    //         _embedded: {
-    //             tags: [
-    //             {
-    //                 id: 2719
-    //             }
-    //             ]
-    //         }
-    //         }
-    //     ]
-    //     }, {
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjY1Y2UyNzZiYTUzZDVhZDQ3NDgxMDJiMzY1OWMzMmZiNTJmYTNhN2ViMTk2Mjk5ODZjMTRhYzk5NTdjNjM0YjIyMThmZGJiYzkzNzU1MmE4In0.eyJhdWQiOiI3YjQ5MGYxOC0yYmU1LTRhNTUtYTc0ZS0xOTYzYzk2NDFiOTgiLCJqdGkiOiI2NWNlMjc2YmE1M2Q1YWQ0NzQ4MTAyYjM2NTljMzJmYjUyZmEzYTdlYjE5NjI5OTg2YzE0YWM5OTU3YzYzNGIyMjE4ZmRiYmM5Mzc1NTJhOCIsImlhdCI6MTY5NDIzNTc3OCwibmJmIjoxNjk0MjM1Nzc4LCJleHAiOjE2OTQyMzgxNzgsInN1YiI6Ijk4OTM5NzQiLCJncmFudF90eXBlIjoiIiwiYWNjb3VudF9pZCI6MCwiYmFzZV9kb21haW4iOm51bGwsInZlcnNpb24iOiJ2MSIsInNjb3BlcyI6WyJjaGF0cyIsImNybSIsIm1haWwiLCJub3RpZmljYXRpb25zIiwidW5zb3J0ZWQiXX0.RS8ptXUF8bavK5R2yITekxu-pwGyC7UNCotVvQ06gJwD0DhKSi3PeA4tSr84ZFSLEbw_eqVegSX3A7PNBRhbfVQiALskgy3ln5uxPFy1-cwrtmrieIOTBbiwXksG1Jn1J4PcjdMs7A1Lh9nHT0mBlaMCuL8Q6hgAYhUPc3_C0yFSF6wrMtUSdI7FAdIbv57hNpMGGdJphpEty-mn908qR0zuIrTcRweA7YNElCffYmH_DYlWztPbUAT775GgAGzWoIZGUwbOhF9hlUleFt1-AgWgFh1swvovOcxoo3Z0KCghcstlT9PeEh46Ng4U6JKSDSOsowMhrUNY5KxfTgE35w`
-    //     }
-    //     })
-    //     .then((response) => {
-    //     console.log('Сделки успешно созданы:', response.data);
-    //     })
-    //     .catch((error) => {
-    //     console.error('Ошибка при создании сделок:', error);
-    //     });
-    // }
+  const [leadName, setLeadName] = useState('');
+  const [validationErrors, setValidationErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false); 
+
+  const validationSchema = Yup.object().shape({
+    leadName: Yup.string()
+      .required('Имя сделки обязательно для заполнения')
+      .min(3, 'Имя сделки должно содержать минимум 3 символа'),
+  });  
+
+  const handleLeadNameChange = (e) => {
+    const { name, value } = e.target;
+    setLeadName(value);
+    
+    Yup
+      .reach(validationSchema, name)
+      .validate(value)
+      .then(() => {
+        setValidationErrors({ ...validationErrors, [name]: '' });
+      })
+      .catch((error) => {
+        setValidationErrors({ ...validationErrors, [name]: error.message });
+      });
+  };  
+
+  async function getTokenFromServer() {
+    try {
+      const response = await axios.post('https://evion-cars-api-a533851fe462.herokuapp.com/get-access-token');
+      console.log('Ответ от сервера:', response.data);
+      localStorage.setItem("token", JSON.stringify(response.data))
+    } catch (error) {
+      console.error('Ошибка при получении токена:', error);
+    }
+  }  
+
+  const token = JSON.parse(localStorage.getItem("token"));
+
+  const config = {
+    headers: {
+      'Authorization': `Bearer ${token?.access_token}`,
+      'Content-Type': 'application/json',
+    },
+  };
+
+  useEffect(() => {
+    getTokenFromServer()
+  }, [])
+
+  function order() {
+    setIsSubmitting(true); 
+  
+    validationSchema
+      .validate({ leadName })
+      .then(() => {
+        const leadData = [
+          {
+            name: leadName,
+            price: 200,
+            pipeline_id: 7218598,
+            custom_fields_values: [
+              {
+                  field_id: 2161621,
+                  values: [
+                      {
+                          value: "BYD (Build Your Dreams)"
+                      }
+                  ]
+              }
+          ]
+          }
+        ]
+  
+        axios
+          .post('https://evion-cars-api-a533851fe462.herokuapp.com/create-leads', leadData, config)
+          .then((response) => {
+            if (response.status === 200) {
+              console.log('Сделка успешно добавлена:', response.data);
+            } else {
+              console.error('Ошибка при добавлении сделки:', response.status, response.data);
+            }
+          })
+          .catch((error) => {
+            console.error('Ошибка при отправке запроса:', error);
+          })
+          .finally(() => {
+            setIsSubmitting(false); 
+          });
+      })
+      .catch((error) => {
+        setValidationErrors({ ...validationErrors, leadName: error.message });
+        setIsSubmitting(false);
+      });
+  }  
+
   return (
-    <button>Отправить</button>
-  )
+    <div>
+      <input
+        type="text"
+        placeholder="Имя сделки"
+        name="leadName"
+        value={leadName}
+        onChange={handleLeadNameChange}
+        disabled={isSubmitting} // Заблокировать поле ввода во время отправки формы
+      />
+      {validationErrors.leadName && (
+        <div className="error-message">{validationErrors.leadName}</div>
+      )}
+      <button onClick={order} disabled={isSubmitting}>
+        {isSubmitting ? 'Отправка...' : 'Добавить сделку в AmoCRM'}
+      </button>
+    </div>
+  );
 }
 
-export default BuyElectroCar
+export default BuyElectroCar;
