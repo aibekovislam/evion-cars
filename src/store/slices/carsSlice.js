@@ -56,5 +56,3 @@ const carsSlice = createSlice({
 export default carsSlice.reducer;
 
 export const selectCars = (state) => state.cars.cars;
-
-console.log("aofhiaohs");

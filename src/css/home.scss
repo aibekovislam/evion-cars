@@ -1,0 +1,389 @@
+.big-title > div {
+  color: #fff;
+  font-family: "tildasans-semibold";
+  font-size: 48px;
+  display: flex;
+  margin-top: 60px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-image: (
+    "https://thumb.tildacdn.com/tild3438-6163-4934-b737-396566306531/-/format/webp/Ellipse_7tfftct.png"
+  );
+  background-color: rgb(29, 28, 28);
+}
+
+.big-title > button {
+  margin-top: 335px;
+  margin-bottom: 60px;
+  width: 267px;
+  height: 47px;
+  background-color: rgba(255, 255, 255, 0.078);
+  color: #fff;
+  border-radius: 10px;
+  border-color: rgba(255, 255, 255, 0.386);
+  font-size: 14px;
+}
+
+.big-title > button > a {
+  color: #fff;
+}
+
+.big-title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.categories-image > img {
+  width: 1440px;
+}
+
+.categories-image {
+  background-color: black;
+}
+
+// Map
+
+/* react leafleat */
+.leaflet-container {
+  height: 708px;
+  margin-bottom: 50px;
+  width: 1095px;
+  margin-top: 50px;
+}
+
+.cluster-icon {
+  background-color: #333;
+  height: 2em;
+  width: 2em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  box-shadow: 0 0 0px 5px #fff;
+}
+
+/* react leafleat */
+
+// home
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 1186px;
+  height: 291px;
+  background-color: #333;
+  border: 2px #fff;
+  border-radius: 15px;
+  padding: 30px 20px 30px 20px;
+}
+.container-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.container-filter > h2 {
+  font-family: "tildasans-semibold";
+  color: #fff;
+}
+
+.filter-car {
+  height: 40px;
+  width: 365px;
+  background-color: #fff;
+  color: #333;
+  font-family: "tildasans-thin";
+  border-radius: 10px;
+}
+
+.filter-car-special {
+  width: 175px;
+  height: 40px;
+  background-color: #fff;
+  color: #333;
+  font-family: "tildasans-thin";
+  border-radius: 10px;
+}
+
+.show {
+  background-color: transparent;
+  border-radius: 10px;
+  // border-color: #00c9ae;
+  border: 1px solid #00c9ae;
+  width: 365px;
+  height: 41px;
+  color: white;
+  margin-left: 381px;
+}
+.cars-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.cars-container > h2 {
+  font-family: "tildasans-semibold";
+  color: #fff;
+}
+.name {
+  color: #fff;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.price {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.photo-car {
+  width: 290px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  gap: 45px;
+  width: 1286px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-info {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.title-ia {
+  color: #fff;
+  font-family: "tildasans-semibold";
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.title-info {
+  color: #fff;
+  font-size: 22px;
+  font-family: "tildasans-thin";
+}
+.info-box > p {
+  color: #c2c2c2;
+  font-size: 17px;
+  margin-top: 30px;
+  font-family: "tildasans-thin";
+}
+.more {
+  color: #ffffff;
+  margin-top: 10px;
+  margin-left: 200px;
+  font-family: "tildasans-thin";
+}
+.more::after {
+  content: "   >";
+}
+.info-box {
+  width: 339px;
+  height: 220px;
+  background-color: #383737;
+  border-radius: 10px;
+  padding: 20px 20px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #fff;
+}
+.map-container > h2 {
+  color: #fff;
+  font-size: 22px;
+  font-family: "tildasans-thin";
+}
+
+.map-container > h2::after {
+  content: " ⚡";
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.container-absolute {
+  margin-top: 30px;
+  background-image: url("https://thumb.tildacdn.com/tild3838-6335-4661-a663-663965386338/-/format/webp/_1.png");
+  animation: moveBackground 4s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0; /* Начальное положение фона */
+  }
+  50% {
+    background-position: 100% 0; /* Положение фона в середине анимации */
+  }
+  100% {
+    background-position: 0 0; /* Конечное положение фона */
+  }
+}
+
+.title-absolute > h2 {
+  color: #fff;
+  font-family: "tildasans-semibold";
+  font-size: 24px;
+}
+.title-absolute > button {
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;
+  width: 117px;
+  height: 33px;
+  margin-top: 40px;
+  border: none;
+}
+.title-absolute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-top > img {
+  width: 250px;
+  height: 106px;
+}
+.header-top > h2 {
+  color: #fff;
+  font-family: "tildasans-thin";
+  margin-top: 20px;
+  font-size: 29px;
+}
+.header-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 75px;
+}
+.company {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 85px;
+  justify-content: center;
+}
+.title-h2 {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-family: "tildasans-thin";
+  margin-top: 30px;
+}
+.thanks {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 155px;
+}
+
+.thanks > img {
+  width: 217px;
+  height: 116px;
+}
+
+.thanks > p {
+  color: white;
+  font-family: "tildasans-thin";
+  font-size: 18px;
+}
+.company-special {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 81px;
+}
+.special-image-collab {
+  width: 224px;
+  height: 132px;
+}
+.china-container {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+.title-china > h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 38px;
+}
+.title-china > p {
+  color: #fff;
+  font-size: 18px;
+  font-family: "tildasans-thin";
+}
+.china {
+  margin-top: 90px;
+}
+// footer
+
+.footer {
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 139px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.column-special > img {
+  width: 70px;
+  height: 47px;
+}
+.logos {
+  display: flex;
+  gap: 5px;
+}
+
+.pen {
+  color: #dcdcdc;
+  font-size: 15px;
+  font-family: "tildasans-thin";
+}
+.green-pen {
+  color: #00c9ae;
+  font-size: 20px;
+  font-family: "tildasans-semibold";
+}
+.application {
+  width: 170px;
+  height: 48px;
+}
+.pen-grey {
+  color: #8c8c8c;
+  font-size: 13px;
+  font-family: "tildasans-thin";
+}

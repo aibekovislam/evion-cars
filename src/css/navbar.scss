@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "tildasans-reg";
+  src: url("../fonts/TildaSans-Regular.woff ") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "tildasans-med";
+  src: url("../fonts/TildaSans-Bold.woff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "tildasans-600";
+  src: url("../fonts/TildaSans-Medium.woff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "tildasans-semibold";
+  src: url("../fonts/TildaSans-Semibold.woff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "tildasans-thin";
+  src: url("../fonts/TildaSans-Light.woff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.main-image {
+  background-image: url("https://static.tildacdn.com/tild3632-3438-4239-a262-323766616231/illustration-ev-car-.png");
+}
+.logo-image {
+  width: 90px;
+  height: 61px;
+}
+
+.container-navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.097);
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 55px;
+}
+
+.navbar-nav > li {
+  list-style-type: none;
+}
+.nav-item {
+  text-decoration: none;
+  color: #cfcece;
+  font-family: "tildasans-thin";
+}
+
+.container-util {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.contacts-button {
+  background-color: transparent;
+  border-radius: 10px;
+  border-color: #00c9ae;
+  width: 144px;
+  height: 41px;
+  color: white;
+}
