@@ -36,7 +36,11 @@
 }
 
 .main-image {
-  background-image: url("https://static.tildacdn.com/tild3632-3438-4239-a262-323766616231/illustration-ev-car-.png");
+  // background-position: center center;
+  // background-attachment: scroll;
+  background-image: url("https://static.tildacdn.com/tild3731-6531-4632-a537-326336346164/Rectangle_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .logo-image {
   width: 90px;

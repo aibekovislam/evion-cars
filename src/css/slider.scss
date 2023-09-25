@@ -1,0 +1,131 @@
+// .next {
+//   width: 28px;
+//   height: 28px;
+// }
+
+// .prev {
+//   width: 28px;
+//   height: 28px;
+// }
+
+// .nextBlock {
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 100%;
+//   background-color: rgb(0, 153, 117);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .prevBlock {
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 100%;
+//   background-color: rgb(0, 153, 117);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .carousel__content {
+//   display: flex !important;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
+// .slick-slider {
+//   display: flex;
+// }
+
+//! card
+
+.slider-image {
+  width: 348px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.wrapper-card {
+  display: flex;
+  justify-content: space-between;
+}
+.card-titles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.characteristics {
+  margin-top: 10px;
+  background-color: #f3f6f5;
+  color: black;
+  border-radius: 10px;
+  width: 82px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-left > h2 {
+  font-family: "tildasans-semibold";
+  font-weight: 900;
+}
+
+.card-left > div {
+  font-family: "tildasans-thin";
+  margin-top: 5px;
+}
+
+.card-price {
+  font-weight: 1000;
+  font-size: 28px;
+}
+
+.more-card {
+  width: 291px;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s; /* Анимация изменения цвета и трансформации */
+  cursor: pointer; /* Изменяем курсор при наведении */
+}
+
+.more-card:hover {
+  background-color: #ff0000; /* Новый цвет фона при наведении */
+  color: #fff; /* Изменяем цвет текста при наведении */
+  transform: scale(1.05); /* Увеличение размера кнопки при наведении */
+  border: none;
+}
+
+.characteristics {
+  font-weight: bold;
+  font-family: "tildasans-thin";
+}
+
+.card-cars {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-family: "tildasans-thin";
+}
+
+.container-card-title {
+  padding: 15px 15px 15px 15px;
+}
+
+.card-container {
+  display: flex; /* Добавляем flex-контейнеру */
+  gap: 20px; /* Пространство между элементами */
+  flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
+  justify-content: center;
+}
