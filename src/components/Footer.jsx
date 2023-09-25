@@ -5,6 +5,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
+import logo from "../css/images/2.svgevionlogo.png";
 
 function Footer() {
   return (
@@ -12,13 +13,31 @@ function Footer() {
       <div className="footer">
         <div className="footer-container">
           <div className="column-special">
-            <img src="https://static.tildacdn.com/tild3164-3266-4761-a134-376461663933/2.svg" />
+            <a href="https://evion.kg/">
+              <img src={logo} />
+            </a>
             <div className="logos">
-              <FaFacebookSquare style={{ fontSize: "28px", color: "white" }} />
-              <FaInstagramSquare style={{ fontSize: "28px", color: "white" }} />
-              <FaLinkedin style={{ fontSize: "28px", color: "white" }} />
-              <FaWhatsappSquare style={{ fontSize: "28px", color: "white" }} />
-              <FaTelegram style={{ fontSize: "28px", color: "white" }} />
+              <a href="#">
+                <FaFacebookSquare
+                  style={{ fontSize: "28px", color: "black" }}
+                />
+              </a>
+              <a href="https://www.instagram.com/evion_kg/?utm_source=qr">
+                <FaInstagramSquare
+                  style={{ fontSize: "28px", color: "black" }}
+                />
+              </a>
+              <a href="">
+                <FaLinkedin style={{ fontSize: "28px", color: "black" }} />
+              </a>
+              <a href="https://api.whatsapp.com/send?phone=996500333351&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5">
+                <FaWhatsappSquare
+                  style={{ fontSize: "28px", color: "black" }}
+                />
+              </a>
+              <a href="https://t.me/evion_chat_bot">
+                <FaTelegram style={{ fontSize: "28px", color: "black" }} />
+              </a>
             </div>
             <div className="pen">
               2023 ⓒ Все права защищены.
@@ -27,23 +46,47 @@ function Footer() {
           </div>
           <div className="column">
             <div className="green-pen">
-              <div className="pen">Розничным сетям</div>
-              <div className="pen">Гостиничному бизнесу</div>
-              <div className="pen">АЗС</div>
-              <div className="pen">Автопроизводителям и дилерам</div>
+              <a href="https://evion.kg/biznesu#!/tab/627586155-1">
+                <div className="pen">Розничным сетям</div>
+              </a>
+              <a href="https://evion.kg/biznesu#!/tab/627586155-2">
+                <div className="pen">Гостиничному бизнесу</div>
+              </a>
+              <a href="https://evion.kg/biznesu#!/tab/627586155-3">
+                <div className="pen">АЗС</div>
+              </a>
+              <a href="https://evion.kg/biznesu#!/tab/627586155-4">
+                <div className="pen">Автопроизводителям и дилерам</div>
+              </a>
             </div>
           </div>
           <div className="column">
-            <div className="green-pen">Автопаркам</div>
-            <div className="pen">Объектам недвижимости</div>
-            <div className="pen">Энергетическим компаниям</div>
-            <div className="pen">Электромобилистам</div>
+            <a href="https://evion.kg/avtoparkam">
+              <div className="green-pen">Автопаркам</div>
+            </a>
+            <a href="https://evion.kg/zastroyshikam">
+              <div className="pen">Объектам недвижимости</div>
+            </a>
+            <a href="https://evion.kg/energeticheskimcompanyam">
+              <div className="pen">Энергетическим компаниям</div>
+            </a>
+            <a href="">
+              <div className="pen">Электромобилистам</div>
+            </a>
           </div>
           <div className="column">
-            <div className="green-pen">Клиентам</div>
-            <div className="pen">Оплата и доставка</div>
-            <div className="pen">Гарантии и возвра</div>
-            <div className="pen">Техническая поддержка</div>
+            <a href="">
+              <div className="green-pen">Клиентам</div>
+            </a>
+            <a href="">
+              <div className="pen">Оплата и доставка</div>
+            </a>
+            <a href="">
+              <div className="pen">Гарантии и возвра</div>
+            </a>
+            <a href="">
+              <div className="pen">Техническая поддержка</div>
+            </a>
           </div>
           <div className="column">
             <img
@@ -54,33 +97,75 @@ function Footer() {
               className="application"
               src="https://static.tildacdn.com/tild3232-3564-4535-b136-383035623338/App_Store.svg"
             />
-            <div className="pen-grey">Обработка персональных данных</div>
+            <a href="">
+              <div className="pen-grey">Обработка персональных данных</div>
+            </a>
           </div>
           <div className="column">
-            <div className="green-pen">Продукт</div>
-            <div className="pen">Зарядные станции</div>
-            <div className="pen">Мобильные приложения</div>
-            <div className="pen">Система управления</div>
-            <div className="pen">Балансировка мощности</div>
-            <div className="pen">Зарядка как сервис</div>
-            <div className="pen">Каталог товаров</div>
-            <div className="pen-grey">Политика конфиденциальности</div>
+            <a href="">
+              <div className="green-pen">Продукт</div>
+            </a>
+            <a href="https://evion.kg/zaryadnyestancii">
+              <div className="pen">Зарядные станции</div>
+            </a>
+            <a href="https://evion.kg/setstanciy">
+              <div className="pen">Мобильные приложения</div>
+            </a>
+            <a href="https://evion.kg/po">
+              <div className="pen">Система управления</div>
+            </a>
+            <a href="https://evion.kg/balancirovkamoshnosti">
+              <div className="pen">Балансировка мощности</div>
+            </a>
+            <a href="https://evion.kg/uslugizaryadkikakservice">
+              <div className="pen">Зарядка как сервис</div>
+            </a>
+            <a href="https://evion.kg/catalog">
+              <div className="pen">Каталог товаров</div>
+            </a>
+            <a href="https://evion.kg/privacy_policy">
+              <div className="pen-grey">Политика конфиденциальности</div>
+            </a>
           </div>
           <div className="column">
-            <div className="green-pen">Партнерство</div>
-            <div className="pen">Франшиза</div>
-            <div className="pen">Дистрибьюторам и установщикам</div>
-            <div className="pen">Бесплатное размещение зарядных станций</div>
-            <div className="pen-grey">Условия использования приложения</div>
+            <a href="">
+              <div className="green-pen">Партнерство</div>
+            </a>
+            <a href="https://evion.kg/franchiza">
+              <div className="pen">Франшиза</div>
+            </a>
+            <a href="">
+              <div className="pen">Дистрибьюторам и установщикам</div>
+            </a>
+            <a href="">
+              <div className="pen">Бесплатное размещение зарядных станций</div>
+            </a>
+            <a href="https://evion.kg/terms_of_use">
+              <div className="pen-grey">Условия использования приложения</div>
+            </a>
           </div>
           <div className="column">
-            <div className="green-pen">Ресурсы</div>
-            <div className="pen">Блог</div>
-            <div className="pen">Калькулятор окупаемости</div>
-            <div className="green-pen">Мы</div>
-            <div className="pen">О нас</div>
-            <div className="pen">Принципы компании</div>
-            <div className="pen-grey">Файлы cookie</div>
+            <a href="">
+              <div className="green-pen">Ресурсы</div>
+            </a>
+            <a href="https://evion.kg/blog">
+              <div className="pen">Блог</div>
+            </a>
+            <a href="https://evion.kg/calculator">
+              <div className="pen">Калькулятор окупаемости</div>
+            </a>
+            <a href="">
+              <div className="green-pen">Мы</div>
+            </a>
+            <a href="https://evion.kg/onas">
+              <div className="pen">О нас</div>
+            </a>
+            <a href="https://evion.kg/8osnovevion">
+              <div className="pen">Принципы компании</div>
+            </a>
+            <a href="https://evion.kg/cookie">
+              <div className="pen-grey">Файлы cookie</div>
+            </a>
           </div>
         </div>
       </div>
