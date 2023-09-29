@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/home.scss";
 import Navbar from "../components/Navbar";
-import Categories from "../css/images/Frame 2084.png";
+// import Categories from "../css/images/Frame 2084.png";
 import Map from "../components/Map";
 import Footer from "../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
@@ -44,6 +44,7 @@ import zapas from "../css/images/zapas.png";
 
 import { getImages, selectImages } from "../store/slices/imagesSlice";
 import Slider1 from "../components/slider1";
+import Card from "../components/Card";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -87,12 +88,11 @@ function HomePage() {
       <div className="main-image">
         <Navbar />
         <div className="title-order">
-          <img src={electroTitle} />
+          <h2>Электромобили</h2>
           <h3>в наличии и на заказ</h3>
         </div>
 
         <div className="first-component">
-          <div></div>
           <div className="info_car">
             <div className="info_car_item">
               <div className="big-number">550</div>
@@ -108,73 +108,73 @@ function HomePage() {
             </div>
           </div>
 
+          {/*  */}
           <div className="images_first">
             <img src={car1} />
             <img src={car2} />
             <img src={car3} />
           </div>
-
-          {/*  */}
         </div>
       </div>
 
       <div className="container-main-content">
-        <div className="container_card">
-          <div className="container-filter">
-            <div className="filter-box-container">
-              <div className="filter-box">
-                <h2>Фильтры</h2>
-                <input
-                  className="input-filter"
-                  placeholder="Марка"
-                  type="text"
-                />
-                <input
-                  className="input-filter"
-                  placeholder="Модель"
-                  type="text"
-                />
-                <input
-                  className="input-filter"
-                  placeholder="Поколение"
-                  type="text"
-                />
-                <input
-                  className="special-input-filter"
-                  placeholder="Цена от, $"
-                  type="text"
-                />
-                <input
-                  className="special-input-filter"
-                  placeholder="до, $"
-                  type="text"
-                />
-                <input
-                  className="special-input-filter"
-                  placeholder="Год от"
-                  type="text"
-                />
-                <input
-                  className="special-input-filter"
-                  placeholder="до"
-                  type="text"
-                />
-                <input
-                  className="input-filter"
-                  placeholder="Привод"
-                  type="text"
-                />
-                <input
-                  className="input-filter"
-                  placeholder="Кузов"
-                  type="text"
-                />
-                <button className="show">Показать</button>
-              </div>
-            </div>
-          </div>
+        <div className="container-filter">
+          <div className="filters">
+            {/*  */}
 
-          <Slider1 />
+            <div className="aigad">
+              <input
+                className="input-filter-1"
+                type="text"
+                placeholder="Марка"
+              />
+              <input
+                className="input-filter"
+                type="text"
+                placeholder="Модель"
+              />
+              <input
+                className="input-filter"
+                type="text"
+                placeholder="Поколение"
+              />
+            </div>
+            <div className="aigad">
+              <input
+                className="input-filter-1"
+                type="text"
+                placeholder="Цена $ "
+              />
+              <input className="input-filter" type="text" placeholder="Год" />
+              <input
+                type="text"
+                className="special-input-filter"
+                placeholder="Кузов"
+              />
+              <input
+                type="text"
+                className="special-input-filter"
+                placeholder="Топливо"
+              />
+            </div>
+            <div className="aigad">
+              <input
+                className="input-filter-1"
+                type="text"
+                placeholder="Мощность квт"
+              />
+              <input
+                className="input-filter"
+                type="text"
+                placeholder="привод"
+              />
+            </div>
+
+            <div className="button-filter">
+              <button>Показать</button>
+            </div>
+            {/*  */}
+          </div>
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 a {
   text-decoration: none;
@@ -21,57 +22,64 @@ body {
 }
 
 .title-order > h3 {
-  font-size: 38px;
-  font-family: "tildasans-thin";
+  font-size: 58px;
+  // font-family: "tildasans-thin";
   color: #fff;
+  font-family: "Permanent Marker", cursive;
+  // font-family: "Dela Gothic One", cursive;
 }
 
-.title-order > img {
-  width: 761px;
-  height: 69px;
-  object-fit: cover;
+.title-order > h2 {
+  font-family: "Permanent Marker", cursive;
+  // font-family: "Dela Gothic One", cursive;
+
+  font-size: 76px;
+  color: #fff;
 }
 
 .first-component {
   display: flex;
-  justify-content: space-between;
-  // margin-top: 200px;
+  justify-content: center;
+  margin-top: 200px;
 }
 
 .images_first {
   display: flex;
   flex-direction: column;
+  position: absolute;
   row-gap: 15px;
-  // position: absolute;
+  right: 11vh;
+  top: 31vh;
 }
 
 .images_first > img {
-  width: 202px;
-  height: 109px;
+  width: 242px;
+  height: 129px;
+  transition: 0.3 ease;
 }
 
 .info_car {
-  // margin-top: 165px;
   display: flex;
-  gap: 15px;
-  margin-left: 200px;
+  gap: 55px;
+  margin-bottom: 200px;
 }
 
 .big-number {
   font-family: "Dela Gothic One", cursive;
-  font-size: 36px;
+  font-size: 56px;
   color: white;
-  margin-left: 10px;
+  margin-left: 0px;
 }
 .big-number-special {
   font-family: "Dela Gothic One", cursive;
-  font-size: 36px;
+  font-size: 56px;
   color: white;
-  margin-left: 55px;
+  margin-left: 35px;
 }
 
 .small-number {
   color: #fff;
+  font-family: "tildasans-thin";
 }
 
 // Map
@@ -109,59 +117,68 @@ body {
 
 //! start
 
-.container-filter > .filter-box-container > .filter-box > h2 {
-  font-family: "tildasans-thin";
-}
-.container-filter {
-  width: 438px;
-  height: 604px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.filter-box {
+.filters {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  row-gap: 15px;
-  gap: 25px;
-}
-
-.input-filter {
-  background-color: #fff;
-  border: 1px solid rgb(139, 138, 138);
-  border-radius: 10px;
-  padding-left: 5px;
-  width: 335px;
-  height: 40px;
+  flex-direction: column;
+  background-color: #d2d1d1;
+  border-radius: 15px;
+  gap: 15px;
+  // margin: 15px 15px 15px 15px;
 }
 
 .special-input-filter {
-  background-color: #fff;
-  border: 1px solid rgb(139, 138, 138);
+  // margin-left: 35px;
   border-radius: 10px;
-  padding-left: 5px;
-  width: 155px;
-  height: 40px;
+  border: 1px solid #666666;
+  padding-left: 10px;
+  width: 170px;
+  height: 45px;
 }
 
-.show {
-  background-color: #000000;
-  color: #fff;
+.input-filter {
+  // margin-left: 35px;
+  width: 305px;
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid #666666;
+  padding-left: 10px;
+}
+
+.aigad {
+  display: flex;
+  gap: 25px;
+  margin: 15px 15px 15px 15px;
+}
+
+.input-filter-1 {
+  // margin-left: 15px;
+  width: 305px;
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid #666666;
+  padding-left: 10px;
+}
+
+.button-filter > button {
+  width: 274px;
+  height: 45px;
   border: none;
   border-radius: 10px;
-
-  width: 385px;
-  height: 40px;
-}
-
-.container-main-content {
-  margin-left: 30px;
-  margin-top: 40px;
-}
-
-.container_card {
+  color: #fff;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+.button-filter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-filter {
+  display: flex;
+  justify-content: center;
 }
 
 //! end
@@ -375,45 +392,4 @@ body {
   color: #676767;
   font-size: 13px;
   font-family: "tildasans-thin";
-}
-
-.nav-item {
-  position: relative; /* Чтобы позиционировать выпадающее меню */
-}
-
-.nav-item::after {
-  content: "  ⇓";
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%; /* Отображение под .nav-item */
-  left: 0;
-  display: none; /* Изначально скрываем меню */
-  background-color: rgb(0, 0, 0);
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1; /* Чтобы меню находилось над остальным содержимым */
-  width: 200px;
-  border: 1px solid #fff;
-}
-
-.nav-item:hover .dropdown {
-  display: block; /* Показываем меню при наведении на .nav-item */
-}
-
-.dropdown ul {
-  list-style-type: none;
-  padding: 10px;
-}
-
-.dropdown li {
-  margin-bottom: 10px;
-}
-
-.dropdown a {
-  text-decoration: none;
-  color: #ffffff;
-  font-family: "tildasans-thin";
-  font-size: 16px;
 }
