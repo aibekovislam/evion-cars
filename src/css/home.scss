@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
+@font-face {
+  font-family: "europe-text";
+  src: url("../EuropeExt/europeext_bold_italic.otf") format("truetype");
+}
+
 a {
   text-decoration: none;
 }
@@ -23,16 +28,12 @@ body {
 
 .title-order > h3 {
   font-size: 58px;
-  // font-family: "tildasans-thin";
   color: #fff;
-  font-family: "Permanent Marker", cursive;
-  // font-family: "Dela Gothic One", cursive;
+  font-family: "europe-text";
 }
 
 .title-order > h2 {
-  font-family: "Permanent Marker", cursive;
-  // font-family: "Dela Gothic One", cursive;
-
+  font-family: "europe-text";
   font-size: 76px;
   color: #fff;
 }
@@ -146,7 +147,7 @@ body {
 
 .aigad {
   display: flex;
-  gap: 25px;
+  gap: 33px;
   margin: 15px 15px 15px 15px;
 }
 
@@ -157,6 +158,10 @@ body {
   border-radius: 10px;
   border: 1px solid #666666;
   padding-left: 10px;
+}
+
+.container-main-content {
+  margin-top: 50px;
 }
 
 .button-filter > button {
@@ -174,6 +179,7 @@ body {
 .button-filter {
   display: flex;
   justify-content: flex-end;
+  margin: 0px 15px 15px 0px;
 }
 
 .container-filter {
@@ -190,7 +196,7 @@ body {
   margin-top: 20px;
 }
 
-.title-ia {
+.title-ia > h2 {
   color: #000000;
   font-family: "tildasans-semibold";
   font-weight: 100;
@@ -270,7 +276,7 @@ body {
   font-family: "tildasans-semibold";
   font-size: 24px;
 }
-.title-absolute > button {
+.title-absolute > a > button {
   background-color: #000000;
   color: rgb(255, 255, 255);
   border-radius: 10px;

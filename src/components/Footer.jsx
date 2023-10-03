@@ -13,9 +13,10 @@ function Footer() {
       <div className="footer">
         <div className="footer-container">
           <div className="column-special">
-            <a href="https://evion.kg/">
-              <img src={logo} />
+            <a href="/">
+              <img src={logo} style={{ filter: "brightness(0%)" }} />
             </a>
+
             <div className="logos">
               <a href="#">
                 <FaFacebookSquare
@@ -91,10 +92,12 @@ function Footer() {
           <div className="column">
             <img
               className="application"
+              style={{ filter: "brightness(0%)" }}
               src="https://static.tildacdn.com/tild3137-3063-4561-a563-633237656534/Google_play.svg"
             />
             <img
               className="application"
+              style={{ filter: "brightness(0%)" }}
               src="https://static.tildacdn.com/tild3232-3564-4535-b136-383035623338/App_Store.svg"
             />
             <a href="">

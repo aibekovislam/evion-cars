@@ -4,6 +4,10 @@
   font-style: normal;
   font-weight: normal;
 }
+@font-face {
+  font-family: "europe-text";
+  src: url("../EuropeExt/europeext_bold_italic.otf") format("truetype");
+}
 
 * {
   box-sizing: border-box;
@@ -37,10 +41,6 @@
   color: #cfcece;
   font-family: "tildasans-thin";
   position: relative;
-}
-
-.nav-item::after {
-  content: " ⇓";
 }
 
 .dropdown {

@@ -40,6 +40,10 @@
 
 //! card
 
+.container-card {
+  margin-top: 45px;
+}
+
 .slider-image {
   width: 348px;
   height: 210px;
@@ -124,8 +128,33 @@
 }
 
 .card-container {
-  display: flex; /* Добавляем flex-контейнеру */
-  gap: 20px; /* Пространство между элементами */
-  flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-left > h2 {
+  font-family: "tildasans-semibold";
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 24ch;
+}
+
+.card-left > div {
+  // font-family: "tildasans-semibold";
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 30ch;
+}
+
+//! swapper
+.checkk {
+  width: 100%;
+  object-fit: cover;
 }

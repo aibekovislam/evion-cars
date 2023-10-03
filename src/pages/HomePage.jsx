@@ -42,47 +42,13 @@ import car2 from "../css/images/car2.png";
 import car3 from "../css/images/car3.png";
 import zapas from "../css/images/zapas.png";
 
-import { getImages, selectImages } from "../store/slices/imagesSlice";
+// import { getImages, selectImages } from "../store/slices/imagesSlice";
 import Slider1 from "../components/slider1";
 import Card from "../components/Card";
 
+// import Check from "../components/Check";
+
 function HomePage() {
-  const dispatch = useDispatch();
-  const cars = useSelector(selectCars);
-  const [carImages, setCarImages] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
-  const carImagesB = useSelector(selectImages);
-
-  useEffect(() => {
-    setIsLoading(true);
-    dispatch(fetchCars());
-  }, [dispatch]);
-
-  useEffect(() => {
-    const fetchCarImages = async () => {
-      const imageUrls = {};
-      for (const car of cars) {
-        const imageUrl = await getImage(car.id);
-        await dispatch(getImages(car.id));
-        imageUrls[car.id] = imageUrl;
-      }
-      setCarImages(imageUrls);
-      setIsLoading(false);
-    };
-
-    if (cars.length > 0) {
-      fetchCarImages();
-    }
-  }, [cars, dispatch]);
-
-  // useEffect(() => {
-  //   if (carImagesB) {
-  //     console.log(carImagesB);
-  //   }
-  // }, [carImagesB]);
-  // console.log(carImagesB);
-
   return (
     <>
       <div className="main-image">
@@ -178,11 +144,17 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="title-ia">
-        <h2>Информации</h2>
-      </div>
+      <Card />
 
-      <div className="container-info">
+      <Slider1 />
+
+      <Card />
+
+      {/* <div className="title-ia">
+        <h2>Информации</h2>
+      </div> */}
+
+      {/* <div className="container-info">
         <div className="info-box">
           <div className="title-info">
             Как и где купить новый <br /> электромобиль
@@ -215,7 +187,7 @@ function HomePage() {
           </p>
           <div className="more">Подробнее </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="map-container">
         <h2>Карты зарядок</h2>
@@ -225,7 +197,9 @@ function HomePage() {
       <div className="container-absolute">
         <div className="title-absolute">
           <h2>Нужна консультация?</h2>
-          <button>Связаться</button>
+          <a href="https://t.me/evion_chat_bot">
+            <button>Связаться</button>
+          </a>
         </div>
       </div>
 

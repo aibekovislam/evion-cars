@@ -6,6 +6,7 @@ import BuyElectroCar from "../pages/BuyElectroCar";
 import DetailForm from "../components/AmoCRMAuth";
 import MainLayouts from "../layouts/MainLayouts";
 import MyPage from "../pages/MyPage";
+import MyCarousel from "../components/MyCarousel";
 
 function MainRoutes() {
   return (
