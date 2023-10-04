@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../css/images/2.svgevionlogo.png";
 import "../css/navbar.scss";
@@ -6,13 +6,18 @@ import { TfiShoppingCart } from "react-icons/tfi";
 import { CiUser } from "react-icons/ci";
 function Navbar() {
   const navRef = useRef();
+  const [activeImage, setActiveImage] = useState(null);
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
   };
 
   return (
-    <div className="main-image">
+    <div
+      className={`main-image ${activeImage === "car1" ? "car1-active" : ""} ${
+        activeImage === "car2" ? "car2-active" : ""
+      } ${activeImage === "car3" ? "car3-active" : ""}`}
+    >
       <div className="navbar-container">
         {/*  */}
         <nav ref={navRef}>

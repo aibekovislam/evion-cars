@@ -10,6 +10,32 @@ a {
   text-decoration: none;
 }
 
+.main-image {
+  background-image: url("https://static.tildacdn.com/tild3731-6531-4632-a537-326336346164/Rectangle_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.car1-active,
+.car2-active,
+.car3-active {
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease; /* Задаем плавный переход для свойства background-image */
+}
+
+.car1-active {
+  background-image: url("http://localhost:3000/static/media/car1.162b12e262aee9d1d3e3.png");
+}
+
+.car2-active {
+  background-image: url("http://localhost:3000/static/media/car2.f0a5fcc98d638222fd7f.png");
+}
+
+.car3-active {
+  background-image: url("http://localhost:3000/static/media/car3.6a4623be78d8845da939.png");
+}
+
 body {
   background-image: (
     "https://thumb.tildacdn.com/tild3438-6163-4934-b737-396566306531/-/format/webp/Ellipse_7tfftct.png"
@@ -27,9 +53,10 @@ body {
 }
 
 .title-order > h3 {
-  font-size: 58px;
+  font-size: 38px;
   color: #fff;
-  font-family: "europe-text";
+  font-family: "tildasans-thin";
+  font-weight: 100;
 }
 
 .title-order > h2 {
@@ -66,13 +93,13 @@ body {
 }
 
 .big-number {
-  font-family: "Dela Gothic One", cursive;
+  font-family: "europe-text";
   font-size: 56px;
   color: white;
   margin-left: 0px;
 }
 .big-number-special {
-  font-family: "Dela Gothic One", cursive;
+  font-family: "europe-text";
   font-size: 56px;
   color: white;
   margin-left: 35px;

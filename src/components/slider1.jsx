@@ -58,26 +58,25 @@ function Slider1() {
   return (
     <div className="container-card">
       <div className="card-container">
+        {/* <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={0}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        > */}
         {cars?.map((item) => (
           <>
             <div className="card-cars">
               {isLoading ? (
                 <Ring size={40} lineWeight={5} speed={2} color="black" />
               ) : (
-                <Swiper
-                  modules={[Navigation, Pagination, Scrollbar, A11y]}
-                  spaceBetween={0}
-                  slidesPerView={1}
-                  navigation
-                  pagination={{ clickable: true }}
-                  scrollbar={{ draggable: true }}
-                  onSlideChange={() => console.log("slide change")}
-                  onSwiper={(swiper) => console.log(swiper)}
-                >
-                  <SwiperSlide>
-                    <img src={carImages[item.id]} className="slider-image" />
-                  </SwiperSlide>
-                </Swiper>
+                // <SwiperSlide>
+                // </SwiperSlide>
+                <img src={carImages[item.id]} className="slider-image" />
               )}
 
               <div className="container-card-title">
@@ -100,6 +99,7 @@ function Slider1() {
             </div>
           </>
         ))}
+        {/* </Swiper> */}
       </div>
     </div>
   );
