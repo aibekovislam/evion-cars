@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../css/home.scss";
 import Navbar from "../components/Navbar";
 // import Categories from "../css/images/Frame 2084.png";
@@ -46,39 +46,245 @@ import zapas from "../css/images/zapas.png";
 import Slider1 from "../components/slider1";
 import Card from "../components/Card";
 
-// import Check from "../components/Check";
+import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../css/images/2.svgevionlogo.png";
+import "../css/navbar.scss";
+import { TfiShoppingCart } from "react-icons/tfi";
+import { CiUser } from "react-icons/ci";
 
 function HomePage() {
+  const navRef = useRef();
+  const [zapasValue, setZapasValue] = useState(0);
+  const [speedValue, setSpeedValue] = useState(0);
+  const [powerValue, setPowerValue] = useState(0);
+  const [activeImage, setActiveImage] = useState(null);
+
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  };
+
+  useEffect(() => {
+    // Начальные значения
+    setZapasValue(0);
+    setSpeedValue(0);
+    setPowerValue(0);
+
+    // Целевые значения
+    const targetZapas = 550;
+    const targetSpeed = 330;
+    const targetPower = 350;
+
+    const duration = 1500; // Продолжительность анимации в миллисекундах
+    const steps = 60; // Количество шагов
+
+    const zapasStep = targetZapas / steps;
+    const speedStep = targetSpeed / steps;
+    const powerStep = targetPower / steps;
+
+    let currentZapas = 0;
+    let currentSpeed = 0;
+    let currentPower = 0;
+
+    const interval = setInterval(() => {
+      if (currentZapas < targetZapas) {
+        currentZapas += zapasStep;
+        setZapasValue(Math.round(currentZapas));
+      }
+
+      if (currentSpeed < targetSpeed) {
+        currentSpeed += speedStep;
+        setSpeedValue(Math.round(currentSpeed));
+      }
+
+      if (currentPower < targetPower) {
+        currentPower += powerStep;
+        setPowerValue(Math.round(currentPower));
+      }
+
+      if (
+        currentZapas >= targetZapas &&
+        currentSpeed >= targetSpeed &&
+        currentPower >= targetPower
+      ) {
+        clearInterval(interval);
+      }
+    }, duration / steps);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   return (
     <>
-      <div className="main-image">
-        <Navbar />
+      <div
+        className={`main-image ${activeImage === "car1" ? "car1-active" : ""} ${
+          activeImage === "car2" ? "car2-active" : ""
+        } ${activeImage === "car3" ? "car3-active" : ""}`}
+      >
+        {/*  */}
+        <div className="navbar-container">
+          {/*  */}
+          <nav ref={navRef}>
+            <div className="idont">
+              <ul className="navbar-nav">
+                <li>
+                  <a className="nav-item" href="#">
+                    Для кого
+                    <div className="dropdown">
+                      <ul>
+                        <li>
+                          <a href="https://evion.kg/biznesu">Бизнесы</a>
+                        </li>
+                        <li>
+                          <a href="https://evion.kg/avtoparkam">Автопаркам</a>
+                        </li>
+                        <li>
+                          <a href="https://evion.kg/zastroyshikam">
+                            Обектам недвижимости
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://evion.kg/energeticheskimcompanyam">
+                            Энергетическим компаниям
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a className="nav-item" href="#">
+                    Продукты
+                    <div className="dropdown">
+                      <ul>
+                        <li>
+                          <a href="https://evion.kg/catalog">Каталог товаров</a>
+                        </li>
+                        <li>
+                          <a href="https://evion.kg/po">
+                            Программное обеспечение
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://evion.kg/balancirovkamoshnosti">
+                            Балансировка мощности
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a className="nav-item" href="#">
+                    Сеть станций
+                  </a>
+                </li>
+
+                <li>
+                  <a className="nav-item" href="#">
+                    Партнерство
+                    <div className="dropdown">
+                      <ul>
+                        <li>
+                          <a href="https://evion.kg/franchiza">Франшиза</a>
+                        </li>
+                        <li>
+                          <a href="#">Размещение станций</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a className="nav-item" href="#">
+                    Ресурсы
+                    <div className="dropdown">
+                      <ul>
+                        <li>
+                          <a href="https://evion.kg/uslugizaryadkikakservice">
+                            Услуги зарядки как сервис
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://evion.kg/calculator">
+                            Калькулятор окупаемости
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://evion.kg/blog">Блог</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a className="nav-item" href="#">
+                    Мы
+                    <div className="dropdown">
+                      <ul>
+                        <li>
+                          <a href="https://evion.kg/onas">О нас</a>
+                        </li>
+                        <li>
+                          <a href="https://evion.kg/calculator">
+                            Принципы компании
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+              <FaTimes />
+            </button>
+          </nav>
+          <button className="nav-btn" onClick={showNavbar}>
+            <FaBars />
+          </button>
+
+          <img src={logo} className="logo-image" />
+
+          <div className="util">
+            <div className="container-util">
+              <TfiShoppingCart style={{ fontSize: "28px", color: "white" }} />
+              <CiUser style={{ fontSize: "28px", color: "white" }} />
+            </div>
+          </div>
+          {/*  */}
+        </div>
+        {/*  */}
+
         <div className="title-order">
-          <h2>Электромобили</h2>
+          <h2>ЭЛЕКТРОМОБИЛИ</h2>
           <h3>в наличии и на заказ</h3>
         </div>
 
         <div className="first-component">
           <div className="info_car">
             <div className="info_car_item">
-              <div className="big-number">550</div>
+              <div className="big-number">{zapasValue}</div>
               <div className="small-number">ЗАПАС ХОДА</div>
             </div>
             <div className="info_car_item">
-              <div className="big-number-special">330</div>
+              <div className="big-number-special">{speedValue}</div>
               <div className="small-number">МАКСИМАЛЬНАЯ СКОРОСТЬ</div>
             </div>
             <div className="info_car_item">
-              <div className="big-number">350</div>
+              <div className="big-number">{powerValue}</div>
               <div className="small-number">ЛОШАДИННЫХ СИЛ</div>
             </div>
           </div>
 
           {/*  */}
           <div className="images_first">
-            <img src={car1} />
-            <img src={car2} />
-            <img src={car3} />
+            <img src={car1} onClick={() => setActiveImage("car1")} />
+            <img src={car2} onClick={() => setActiveImage("car2")} />
+            <img src={car3} onClick={() => setActiveImage("car3")} />
           </div>
         </div>
       </div>
