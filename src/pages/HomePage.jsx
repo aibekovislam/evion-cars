@@ -40,7 +40,6 @@ import cash from "../css/images/_2395947323392.svgevionkashi.png";
 import car1 from "../css/images/car1.png";
 import car2 from "../css/images/car2.png";
 import car3 from "../css/images/car3.png";
-import zapas from "../css/images/zapas.png";
 
 // import { getImages, selectImages } from "../store/slices/imagesSlice";
 import Slider1 from "../components/slider1";
@@ -51,6 +50,7 @@ import logo from "../css/images/2.svgevionlogo.png";
 import "../css/navbar.scss";
 import { TfiShoppingCart } from "react-icons/tfi";
 import { CiUser } from "react-icons/ci";
+import axios from "axios";
 
 function HomePage() {
   const navRef = useRef();
@@ -114,6 +114,22 @@ function HomePage() {
       clearInterval(interval);
     };
   }, []);
+
+  // async function getCarDetail() {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://evion-cars-api-a533851fe462.herokuapp.com/more_info/66370aae-3799-11ee-0a80-0e3300148d39`
+  //     );
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   getCarDetail();
+  // }, []);
+
   return (
     <>
       <div
@@ -338,7 +354,7 @@ function HomePage() {
               <input
                 className="input-filter"
                 type="text"
-                placeholder="привод"
+                placeholder="Привод"
               />
             </div>
 

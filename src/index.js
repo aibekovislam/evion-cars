@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import { VisitorUidProvider } from "./contexts/VisitorContext";
 import { StrictMode } from "react";
+import Toastify from "./components/Toastify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <VisitorUidProvider>
         <StrictMode>
           <App />
+          <Toastify />
         </StrictMode>
       </VisitorUidProvider>
     </Provider>

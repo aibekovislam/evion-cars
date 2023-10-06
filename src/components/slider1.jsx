@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { getImages, selectImages } from "../store/slices/imagesSlice";
 import { getImage } from "../functions/getImage";
 import { Ring } from "@uiball/loaders";
+import { notify } from "./Toastify";
 
 function Slider1() {
   const dispatch = useDispatch();
@@ -76,7 +77,11 @@ function Slider1() {
               ) : (
                 // <SwiperSlide>
                 // </SwiperSlide>
-                <img src={carImages[item.id]} className="slider-image" />
+                <img
+                  onClick={() => navigate(`/details/${item.id}`)}
+                  src={carImages[item.id]}
+                  className="slider-image"
+                />
               )}
 
               <div className="container-card-title">
