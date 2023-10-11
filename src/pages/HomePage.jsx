@@ -1,17 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../css/home.scss";
-import Navbar from "../components/Navbar";
 // import Categories from "../css/images/Frame 2084.png";
 import Map from "../components/Map";
 import Footer from "../components/Footer";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCars, selectCars } from "../store/slices/carsSlice";
-import { getImage } from "../functions/getImage";
-import { useNavigate } from "react-router-dom";
-import { Ring } from "@uiball/loaders";
-import "../css/car.css";
 
-import electroTitle from "../css/images/ЭЛЕКТРОМОБИЛИ.png";
+import "../css/car.css";
 
 // pizda
 import greenAliance from "../css/images/green.png";
@@ -263,7 +256,9 @@ function HomePage() {
             <FaBars />
           </button>
 
-          <img src={logo} className="logo-image" />
+          <a href="/">
+            <img src={logo} className="logo-image" />
+          </a>
 
           <div className="util">
             <div className="container-util">
@@ -277,7 +272,7 @@ function HomePage() {
 
         <div className="title-order">
           <h2>ЭЛЕКТРОМОБИЛИ</h2>
-          <h3>в наличии и на заказ</h3>
+          <h3>В НАЛИЧИИ И НА ЗАКАЗ</h3>
         </div>
 
         <div className="first-component">

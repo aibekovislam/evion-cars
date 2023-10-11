@@ -1,43 +1,3 @@
-// .next {
-//   width: 28px;
-//   height: 28px;
-// }
-
-// .prev {
-//   width: 28px;
-//   height: 28px;
-// }
-
-// .nextBlock {
-//   width: 50px;
-//   height: 50px;
-//   border-radius: 100%;
-//   background-color: rgb(0, 153, 117);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .prevBlock {
-//   width: 50px;
-//   height: 50px;
-//   border-radius: 100%;
-//   background-color: rgb(0, 153, 117);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .carousel__content {
-//   display: flex !important;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-// }
-// .slick-slider {
-//   display: flex;
-// }
-
 //! card
 
 .container-card {
@@ -45,19 +5,11 @@
 }
 
 .slider-image {
-  width: 348px;
+  width: 400px;
   height: 210px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 4px;
 }
-
-// .slider-image {
-//   max-width: 100%; /* Ограничиваем максимальную ширину изображения */
-//   max-height: 100%; /* Ограничиваем максимальную высоту изображения */
-//   width: auto; /* Автоматический расчет ширины на основе ограничений */
-//   height: auto; /* Автоматический расчет высоты на основе ограничений */
-//   border-radius: 15px; /* Если нужно, добавьте скругление углов */
-// }
 
 .wrapper-card {
   display: flex;
@@ -70,38 +22,41 @@
 }
 
 .characteristics {
+  font-family: "Montserrat";
   margin-top: 10px;
   background-color: #f3f6f5;
   color: black;
-  border-radius: 10px;
-  width: 82px;
+  border-radius: 4px;
+  width: 92px;
   height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
 }
 
 .card-left > h2 {
   font-family: "tildasans-semibold";
   font-weight: 900;
+  font-size: 20px;
 }
 
 .card-left > div {
   font-family: "tildasans-thin";
   margin-top: 5px;
+  font-size: 16px;
 }
 
 .card-price {
-  font-weight: 1000;
-  font-size: 28px;
+  font-family: "Montserrat-bold";
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .more-card {
   width: 291px;
   height: 51px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid black;
   border-radius: 5px;
   background-color: transparent;
@@ -109,6 +64,13 @@
   font-weight: bold;
   transition: background-color 0.3s, transform 0.2s; /* Анимация изменения цвета и трансформации */
   cursor: pointer; /* Изменяем курсор при наведении */
+  font-family: "Montserrat";
+}
+
+.more-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .more-card:hover {
@@ -120,15 +82,15 @@
 
 .characteristics {
   font-weight: bold;
-  font-family: "tildasans-thin";
 }
 
 .card-cars {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  font-family: "tildasans-thin";
+  border-radius: 4px;
+  width: 400px;
+  height: 428px;
 }
 
 .container-card-title {
@@ -144,17 +106,17 @@
 }
 
 .card-left > h2 {
-  font-family: "tildasans-semibold";
+  font-family: "Montserrat-medium";
   font-weight: 900;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 24ch;
+  max-width: 20ch;
 }
 
 .card-left > div {
-  // font-family: "tildasans-semibold";
-  font-weight: 900;
+  font-family: "Montserrat-light";
+  font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

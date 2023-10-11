@@ -40,22 +40,21 @@
 }
 .nav-title {
   display: flex;
+  justify-content: space-between;
 }
 .year {
-  margin-left: 15px;
-  font-family: "tildasans-thin";
+  font-family: "Montserrat-light";
   color: rgb(37, 36, 36);
-  font-size: 28px;
+  font-size: 18px;
 }
 .dollar {
-  margin-left: 15px;
-  font-family: "tildasans-thin";
+  font-family: "Montserrat-light";
   color: rgb(37, 36, 36);
-  font-size: 28px;
+  font-size: 18px;
 }
 .tesla-model {
-  font-family: "tildasans-thin";
-  font-size: 28px;
+  font-family: "Montserrat";
+  font-size: 18px;
   font-weight: bold;
   color: rgb(37, 36, 36);
 }
@@ -75,6 +74,7 @@
 }
 
 .button-more > button {
+  font-family: "Arial-regular";
   width: 274px;
   height: 45px;
   background-color: black;
@@ -86,15 +86,19 @@
   border-radius: 10px;
 }
 
+.titles-longCard {
+  width: 600px;
+}
+
 .extra-info-item {
-  font-family: "tildasans-thin";
+  font-family: "Montserrat-light";
   color: #8b8b8b;
 }
 
 .new {
-  font-family: "tildasans-thin";
-  width: 60px;
-  height: 25px;
+  font-family: "Montserrat-medium";
+  width: 70px;
+  height: 35px;
   border-radius: 10px;
   background-color: #dedfe1;
   display: flex;

@@ -2,8 +2,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 @font-face {
-  font-family: "europe-text";
-  src: url("../EuropeExt/europeext_bold_italic.otf") format("truetype");
+  font-family: "tildasans-thin";
+  src: url("../fonts/tilda/TildaSans-Light.woff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "europe-text-italic";
+  src: url("../fonts/EuropeExt/europeext_bold_italic.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "europe-text-light";
+  src: url("../fonts/EuropeExt/europeext_bold.otf") format("truetype");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-light";
+  src: url("../fonts/Montserrat/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-medium";
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-bold";
+  src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-medium-italic";
+  src: url("../fonts/Montserrat/Montserrat-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-light-italic";
+  src: url("../fonts/Montserrat/Montserrat-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Arial-regular";
+  src: url("../fonts/arial/ARIAL.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: "Grandis-light";
+  src: url("../fonts/Grandis/GrandisExtended-Light.woff") format("truetype");
 }
 
 a {
@@ -25,15 +77,15 @@ a {
 }
 
 .car1-active {
-  background-image: url("http://localhost:3000/static/media/car1.162b12e262aee9d1d3e3.png");
+  background-image: url("https://www.supercars.net/blog/wp-content/uploads/2020/09/wallpaperflare.com_wallpaper-1-1.jpg");
 }
 
 .car2-active {
-  background-image: url("http://localhost:3000/static/media/car2.f0a5fcc98d638222fd7f.png");
+  background-image: url("https://images5.alphacoders.com/133/1330753.png");
 }
 
 .car3-active {
-  background-image: url("http://localhost:3000/static/media/car3.6a4623be78d8845da939.png");
+  background-image: url("https://www.cnet.com/a/img/resize/48db2883f7ccef61c70312cd1df6ebd98acfc48f/hub/2020/05/26/dc8ce4a4-6abe-47d6-b28f-5909a9d6776c/ogi-bugatti.jpg?auto=webp&fit=crop&height=675&width=1200");
 }
 
 body {
@@ -53,14 +105,13 @@ body {
 }
 
 .title-order > h3 {
-  font-size: 38px;
+  font-size: 24px;
   color: #fff;
-  font-family: "tildasans-thin";
-  font-weight: 100;
+  font-family: "Grandis-light";
 }
 
 .title-order > h2 {
-  font-family: "europe-text";
+  font-family: "europe-text-italic";
   font-size: 76px;
   color: #fff;
 }
@@ -93,13 +144,13 @@ body {
 }
 
 .big-number {
-  font-family: "europe-text";
+  font-family: "europe-text-italic";
   font-size: 56px;
   color: white;
   margin-left: 0px;
 }
 .big-number-special {
-  font-family: "europe-text";
+  font-family: "europe-text-italic";
   font-size: 56px;
   color: white;
   margin-left: 35px;
@@ -107,7 +158,8 @@ body {
 
 .small-number {
   color: #fff;
-  font-family: "tildasans-thin";
+  font-family: "Grandis-light";
+  font-weight: 100;
 }
 
 // Map
@@ -116,7 +168,7 @@ body {
 .leaflet-container {
   height: 708px;
   margin-bottom: 50px;
-  width: 1095px;
+  width: 1284px;
   margin-top: 50px;
 }
 
@@ -151,6 +203,7 @@ body {
   background-color: #d2d1d1;
   border-radius: 15px;
   gap: 15px;
+  width: 1284px;
   // margin: 15px 15px 15px 15px;
 }
 
@@ -387,12 +440,24 @@ body {
   margin-top: 150px;
   margin-bottom: 100px;
 }
+
 .footer-container {
+  margin: 0px 40px 0px 40px;
+}
+
+.footer-container-more {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 139px;
+  margin-top: 0px;
 }
+.footer-container-more-more {
+  display: flex;
+  justify-content: center;
+  gap: 139px;
+  margin-top: 90px;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -410,12 +475,12 @@ body {
 .pen {
   color: #666666;
   font-size: 15px;
-  font-family: "tildasans-thin";
+  font-family: "Montserrat";
 }
 .green-pen {
-  color: #029b87;
+  color: #000000;
   font-size: 20px;
-  font-family: "tildasans-semibold";
+  font-family: "Montserrat";
 }
 .application {
   width: 170px;
@@ -424,5 +489,5 @@ body {
 .pen-grey {
   color: #676767;
   font-size: 13px;
-  font-family: "tildasans-thin";
+  font-family: "Montserrat";
 }
