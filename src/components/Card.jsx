@@ -35,98 +35,16 @@ function Card() {
                 <div className="tesla-model">Tesla Model Y</div>
                 <div className="year">2019</div>
                 <div className="dollar">35 000$</div>
-                <AiOutlineHeart
-                  style={{ marginLeft: "15px", fontSize: "28px" }}
-                />
+                <AiOutlineHeart style={{ fontSize: "18px" }} />
               </div>
 
               <div className="extra-info">
                 <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-              </div>
-
-              <div className="type">
-                <div className="new">новый</div>
-              </div>
-
-              <div className="button-more">
-                <button>Подробнее</button>
-              </div>
-            </div>
-
-            {/*  */}
-          </div>
-          <div className="longCard">
-            {/*  */}
-
-            <div className="images-three">
-              <img src={car1} />
-              <img src={car2} />
-              <img src={car3} />
-            </div>
-
-            <div className="big-image">
-              <img src="https://www.kbb.com/wp-content/uploads/2023/04/2023-lucid-air-sapphire-front-side-dark-wheels.jpg" />
-            </div>
-
-            <div className="titles-longCard">
-              <div className="nav-title">
-                <div className="tesla-model">Tesla Model Y</div>
-                <div className="year">2019</div>
-                <div className="dollar">35 000$</div>
-                <AiOutlineHeart
-                  style={{ marginLeft: "15px", fontSize: "28px" }}
-                />
-              </div>
-
-              <div className="extra-info">
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-              </div>
-
-              <div className="type">
-                <div className="new">новый</div>
-              </div>
-
-              <div className="button-more">
-                <button>Подробнее</button>
-              </div>
-            </div>
-
-            {/*  */}
-          </div>
-          <div className="longCard">
-            {/*  */}
-
-            <div className="images-three">
-              <img src={car1} />
-              <img src={car2} />
-              <img src={car3} />
-            </div>
-
-            <div className="big-image">
-              <img src="https://www.kbb.com/wp-content/uploads/2023/04/2023-lucid-air-sapphire-front-side-dark-wheels.jpg" />
-            </div>
-
-            <div className="titles-longCard">
-              <div className="nav-title">
-                <div className="tesla-model">Tesla Model Y</div>
-                <div className="year">2019</div>
-                <div className="dollar">35 000$</div>
-                <AiOutlineHeart
-                  style={{ marginLeft: "15px", fontSize: "28px" }}
-                />
-              </div>
-
-              <div className="extra-info">
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
-                <div className="extra-info-item">от 204 до 450 л. с.</div>
+                <div className="extra-info-item">217км/ч</div>
+                <div className="extra-info-item">
+                  Полный (4WD), Задний (RR).
+                </div>
+                <div className="extra-info-item">полноразмерный</div>
               </div>
 
               <div className="type">

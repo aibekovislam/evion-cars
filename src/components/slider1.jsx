@@ -3,9 +3,6 @@ import "../css/slider.scss";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import "swiper/swiper-bundle.min.css";
 import "../css/slider.scss";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -59,24 +56,12 @@ function Slider1() {
   return (
     <div className="container-card">
       <div className="card-container">
-        {/* <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={0}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        > */}
         {cars?.map((item) => (
           <>
             <div className="card-cars">
               {isLoading ? (
                 <Ring size={40} lineWeight={5} speed={2} color="black" />
               ) : (
-                // <SwiperSlide>
-                // </SwiperSlide>
                 <img
                   onClick={() => navigate(`/details/${item.id}`)}
                   src={carImages[item.id]}
@@ -98,13 +83,14 @@ function Slider1() {
                 <div className="card-titles">
                   <div className="characteristics">2023 год</div>
                   <div className="card-price">${item.buyPrice.value}</div>
-                  <button className="more-card">Подробнее</button>
+                  <div className="more-card-container">
+                    <button className="more-card">Подробнее</button>
+                  </div>
                 </div>
               </div>
             </div>
           </>
         ))}
-        {/* </Swiper> */}
       </div>
     </div>
   );
