@@ -56,7 +56,7 @@ function HomePage() {
     navRef.current.classList.toggle("responsive_nav");
   };
 
-  useEffect(() => {
+  function Numbers() {
     // Начальные значения
     setZapasValue(0);
     setSpeedValue(0);
@@ -106,6 +106,10 @@ function HomePage() {
     return () => {
       clearInterval(interval);
     };
+  }
+
+  useEffect(() => {
+    Numbers();
   }, []);
 
   // async function getCarDetail() {
@@ -293,9 +297,9 @@ function HomePage() {
 
           {/*  */}
           <div className="images_first">
-            <img src={car1} onClick={() => setActiveImage("car1")} />
-            <img src={car2} onClick={() => setActiveImage("car2")} />
-            <img src={car3} onClick={() => setActiveImage("car3")} />
+            <img src={car1} onClick={() => Numbers(setActiveImage("car1"))} />
+            <img src={car2} onClick={() => Numbers(setActiveImage("car2"))} />
+            <img src={car3} onClick={() => Numbers(setActiveImage("car3"))} />
           </div>
         </div>
       </div>

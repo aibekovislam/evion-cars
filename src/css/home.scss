@@ -67,7 +67,24 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
 }
+//!
+@keyframes numberAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
 
+.big-number {
+  transition: transform 0.2s ease-in-out;
+}
+
+.big-number.active {
+  animation: numberAnimation 0.5s ease-in-out;
+}
+//!
 .car1-active,
 .car2-active,
 .car3-active {
@@ -77,15 +94,15 @@ a {
 }
 
 .car1-active {
-  background-image: url("https://www.supercars.net/blog/wp-content/uploads/2020/09/wallpaperflare.com_wallpaper-1-1.jpg");
+  background-image: url("https://png.pngtree.com/background/20230516/original/pngtree-vintage-old-car-headlights-on-a-dark-street-picture-image_2599557.jpg");
 }
 
 .car2-active {
-  background-image: url("https://images5.alphacoders.com/133/1330753.png");
+  background-image: url("https://img.freepik.com/premium-photo/subtle-watercolor-abstract-with-classic-muscle_889056-11355.jpg");
 }
 
 .car3-active {
-  background-image: url("https://www.cnet.com/a/img/resize/48db2883f7ccef61c70312cd1df6ebd98acfc48f/hub/2020/05/26/dc8ce4a4-6abe-47d6-b28f-5909a9d6776c/ogi-bugatti.jpg?auto=webp&fit=crop&height=675&width=1200");
+  background-image: url("https://wallpapercave.com/wp/wp1999317.jpg");
 }
 
 body {
