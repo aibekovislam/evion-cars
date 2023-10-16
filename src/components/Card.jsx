@@ -18,15 +18,28 @@ function Card() {
             {/*  */}
 
             <div className="images-three">
-              <img onClick={() => navigate(`/details`)} src={car1} />
-              <img onClick={() => navigate(`/details`)} src={car2} />
-              <img onClick={() => navigate(`/details`)} src={car3} />
+              <img
+                className="imageHover"
+                onClick={() => navigate(`/detail`)}
+                src={car1}
+              />
+              <img
+                className="imageHover"
+                onClick={() => navigate(`/detail`)}
+                src={car2}
+              />
+              <img
+                className="imageHover"
+                onClick={() => navigate(`/detail`)}
+                src={car3}
+              />
             </div>
 
             <div className="big-image">
               <img
+                className="imageHover"
                 src="https://www.kbb.com/wp-content/uploads/2023/04/2023-lucid-air-sapphire-front-side-dark-wheels.jpg"
-                onClick={() => navigate(`/details`)}
+                onClick={() => navigate(`/detail`)}
               />
             </div>
 
@@ -52,7 +65,7 @@ function Card() {
               </div>
 
               <div className="button-more">
-                <button>Подробнее</button>
+                <button onClick={() => navigate("detail")}>Подробнее</button>
               </div>
             </div>
 

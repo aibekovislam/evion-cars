@@ -12,7 +12,7 @@ function MainRoutes() {
     <Routes>
       <Route element={<MainLayouts />}></Route>
       <Route path="/" element={<HomePage />} />
-      <Route path="/details/:id" element={<Detail />} />
+      <Route path="/detail" element={<Detail />} />
       <Route path="/details/:id/form" element={<BuyElectroCar />} />
       <Route path="/baimurat-abdalimov" element={<MyPage />} />
       <Route path="/test" element={<DetailForm />} />
