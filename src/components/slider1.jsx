@@ -52,45 +52,86 @@ function Slider1() {
   // console.log(carImagesB);
 
   // console.log(cars);
+  // {isLoading ? (
+  //   <Ring size={40} lineWeight={5} speed={2} color="black" />
+  // ) : (
+  //   )}
 
   return (
     <div className="container-card">
       <div className="card-container">
-        {cars?.map((item) => (
-          <>
-            <div className="card-cars">
-              {isLoading ? (
-                <Ring size={40} lineWeight={5} speed={2} color="black" />
-              ) : (
-                <img
-                  onClick={() => navigate(`/details/${item.id}`)}
-                  src={carImages[item.id]}
-                  className="slider-image"
-                />
-              )}
+        <div className="card-cars">
+          <img
+            onClick={() => navigate(`/detail`)}
+            src="https://wealthynotes.com/wp-content/uploads/2019/03/mashina-bentley-1-1170x781.jpg"
+            className="slider-image"
+          />
 
-              <div className="container-card-title">
-                <div className="wrapper-card">
-                  <div className="card-left">
-                    <h2>{item.name}</h2>
-                    <div>{item.description}</div>
-                  </div>
-                  <div className="card-right">
-                    <AiOutlineHeart style={{ fontSize: "28px" }} />
-                  </div>
-                </div>
-
-                <div className="card-titles">
-                  <div className="characteristics">2023 год</div>
-                  <div className="card-price">${item.buyPrice.value}</div>
-                  <div className="more-card-container">
-                    <button className="more-card">Подробнее</button>
-                  </div>
+          <div className="container-card-title">
+            <div className="wrapper-card">
+              <div className="card-left">
+                <h2>Car model S</h2>
+                <div>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui,
+                  tempore consequuntur natus ipsum molestias ullam. Id excepturi
+                  aperiam facilis ipsam?
                 </div>
               </div>
+              <div className="card-right">
+                <AiOutlineHeart style={{ fontSize: "28px" }} />
+              </div>
             </div>
-          </>
-        ))}
+
+            <div className="card-titles">
+              <div className="characteristics">2023 год</div>
+              <div className="card-price">$ 12000</div>
+              <div className="more-card-container">
+                <button
+                  className="more-card"
+                  onClick={() => navigate(`/detail`)}
+                >
+                  Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="card-cars">
+          <img
+            onClick={() => navigate(`/details`)}
+            src="https://www.ixbt.com/img/n1/news/2021/8/1/4lc300_large.jpg"
+            className="slider-image"
+          />
+
+          <div className="container-card-title">
+            <div className="wrapper-card">
+              <div className="card-left">
+                <h2>Car model S</h2>
+                <div>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui,
+                  tempore consequuntur natus ipsum molestias ullam. Id excepturi
+                  aperiam facilis ipsam?
+                </div>
+              </div>
+              <div className="card-right">
+                <AiOutlineHeart style={{ fontSize: "28px" }} />
+              </div>
+            </div>
+
+            <div className="card-titles">
+              <div className="characteristics">2023 год</div>
+              <div className="card-price">$ 12000</div>
+              <div className="more-card-container">
+                <button
+                  className="more-card"
+                  onClick={() => navigate(`/detail`)}
+                >
+                  Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

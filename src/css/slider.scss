@@ -128,3 +128,26 @@
   width: 100%;
   object-fit: cover;
 }
+
+.slider-image {
+  width: 400px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.slider-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.card-right > svg {
+  font-size: 28px;
+  transition: color 0.3s ease;
+}
+
+.card-right > svg:hover {
+  color: #ff0000;
+}

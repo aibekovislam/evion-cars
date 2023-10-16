@@ -10,6 +10,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { BiShare } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineMessage } from "react-icons/ai";
+import { notify } from "../components/Toastify";
 
 function Detail() {
   const navRef = useRef();
@@ -366,7 +367,12 @@ function Detail() {
             <div className="forms-container">
               <div className="forms">
                 <button className="forms-write">Написать</button>
-                <button className="forms-ofform">Оформить</button>
+                <button
+                  className="forms-ofform"
+                  onClick={() => notify("Вы успешно офрмили товар")}
+                >
+                  Оформить
+                </button>
               </div>
             </div>
 

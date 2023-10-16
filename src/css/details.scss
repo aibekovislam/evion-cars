@@ -198,6 +198,14 @@ li {
   font-size: 18px;
   color: rgb(35, 238, 35);
   font-family: "Montserrat";
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+
+.forms-write:hover {
+  background-color: #000000; /* Новый цвет фона при наведении */
+  color: #00ff59; /* Изменяем цвет текста при наведении */
+  transform: scale(1.05); /* Увеличение размера кнопки при наведении */
+  cursor: pointer; /* Изменяем курсор при наведении */
 }
 
 .forms-container {
@@ -219,4 +227,11 @@ li {
   color: #fff;
   font-size: 18px;
   font-family: "Montserrat";
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+.forms-ofform:hover {
+  background-color: #000000; /* Новый цвет фона при наведении */
+  color: #ffffff; /* Изменяем цвет текста при наведении */
+  transform: scale(1.05); /* Увеличение размера кнопки при наведении */
+  cursor: pointer; /* Изменяем курсор при наведении */
 }
